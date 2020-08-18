@@ -170,8 +170,8 @@ var hour = d.getHours();
 var mins = d.getMinutes();
 var status = 'open';
 
-if (dayOfWeek !== 1 && dayOfWeek !== 3 && dayOfWeek !== 4 && dayOfWeek !== 5 && dayOfWeek !== 6 && dayOfWeek !== 0 &&  hour >= 18 && hour < 20){
-    if (hour=='13' && mins < '31'){
+if (dayOfWeek !== 1 && dayOfWeek !== 3 && dayOfWeek !== 4 && dayOfWeek !== 5 && dayOfWeek !== 6 && dayOfWeek !== 0 &&  hour >= 13 && hour < 20){
+    if (hour=='13' && mins < '33'){
         status = 'closed';
     }else{
         status = 'open';
