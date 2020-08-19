@@ -162,7 +162,7 @@ h2 {
 
 	
 <script>	
-var d = new Date();
+var d = new Date().toLocaleString('en-NZ', { timeZone: 'New Zealand/Auckland' });
 var dayOfWeek = d.getDay();
 var hour = d.getHours();
 var mins = d.getMinutes();
