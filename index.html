@@ -5,13 +5,15 @@
   	<script type="text/javascript" src="//player.wowza.com/player/latest/wowzaplayer.min.js"></script> 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="icon" href="FavQueOnda.png" type="image/gif" sizes="16x16">
-	<title>Que Onda Radio Show</title>
+	<title>Que Onda! </title>
+  
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<meta charset="UTF-8">
 	<meta name="description" content="El programa de radio en español de Wellington">
-  	<meta name="keywords" content="español, radio, noticias, actividades, queonda.nz">
+  	<meta name="keywords" content="español, radio, noticias, actividades,">
   	<meta name="author" content="ArmandoNZ">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <style>
 body{
@@ -97,6 +99,8 @@ h2 {
 
 <body>
 
+
+
 <div class="container">
   	<div class="row">
     	<div class="col-lg-6 text-center"></div>
@@ -116,16 +120,18 @@ h2 {
     	El programa de radio en espa&#241;ol de Wellington</h2>
 
   </div>
-	<div class="hours">
-      		<br/>
-	    	<div id="WowzaPlayerElement_tr" style="width: 100%; height: 48px; padding: 0"></div> <script type="text/javascript"> WowzaPlayer.create('WowzaPlayerElement_tr', { "license":"PLAY2-f8R7n-C3FWA-XWkhN-jty9X-YfFE7", "title":" Que Onda! - en VIVO", "description":"Wellington Access Radio – Live Stream", "sourceURL":"https://live.accessmedia.nz/Wellington.stream_aac/playlist.m3u8", "autoPlay":false, "volume":"75", "mute":false, "loop":false, "audioOnly":true, "uiShowQuickRewind":true, "uiQuickRewindSeconds":"30" });</script>
-		</div>
+
+    <div class="live">
+      	<br/>
+		
+      	<div id="WowzaPlayerElement_tr" style="width: 100%; height: 48px; padding: 0"></div> <script type="text/javascript"> WowzaPlayer.create('WowzaPlayerElement_tr', { "license":"PLAY2-f8R7n-C3FWA-XWkhN-jty9X-YfFE7", "title":" Que Onda! - en VIVO", "description":"Wellington Access Radio – Live Stream", "sourceURL":"https://live.accessmedia.nz/Wellington.stream_aac/playlist.m3u8", "autoPlay":false, "volume":"75", "mute":false, "loop":false, "audioOnly":true, "uiShowQuickRewind":true, "uiQuickRewindSeconds":"30" });</script>
+		
+    </div>
 	
-	<div class="closed">
+	<div class="podcast">
 		<br/>
 		<iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2FRadioQueOnda%2F" frameborder="0" ></iframe>
 	</div>
-
     <br>
 </div>
 
@@ -159,31 +165,33 @@ h2 {
 
 </div>
 
-
 	
 <script>	
-var d = new Date();
+
+
+
+var d = new Date(new Date().toLocaleString("en-US", {timeZone: "America/New_York"}));
 var dayOfWeek = d.getDay();
 var hour = d.getHours();
 var mins = d.getMinutes();
-var status = 'open';
+var status = 'online';
 
-if (dayOfWeek !== 1 && dayOfWeek !== 3 && dayOfWeek !== 4 && dayOfWeek !== 5 && dayOfWeek !== 6 && dayOfWeek !== 0 &&  hour >= 18 && hour < 20){
-    if (hour=='18' && mins < '50'){
+if (dayOfWeek !== 2 && dayOfWeek !== 3 && dayOfWeek !== 4 && dayOfWeek !== 5 && dayOfWeek !== 6 && dayOfWeek !== 0 &&  hour >= 1 && hour < 4){
+    if (hour =='0' && mins < '45'){
         status = 'closed';
     }else{
-        status = 'open';
+        status = 'online';
     }
 }else{
     status = 'closed';
 }
 
-if (status=='open') {
-    $('.hours').show();
-    $('.closed').hide();
+if (status=='online') {
+    $('.live').show();
+    $('.podcast').hide();
 }else{
-    $('.hours').hide();
-    $('.closed').show();
+    $('.live').hide();
+    $('.podcast').show();
 }
 </script>
 	
