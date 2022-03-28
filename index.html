@@ -176,8 +176,8 @@ var hour = d.getHours();
 var mins = d.getMinutes();
 var status = 'online';
 
-if (dayOfWeek !== 1 && dayOfWeek !== 3 && dayOfWeek !== 4 && dayOfWeek !== 5 && dayOfWeek !== 6 && dayOfWeek !== 0 &&  hour >= 0 && hour < 2){
-    if (hour =='0' && mins < '45'){
+if (dayOfWeek !== 1 && dayOfWeek !== 3 && dayOfWeek !== 4 && dayOfWeek !== 5 && dayOfWeek !== 6 && dayOfWeek !== 0 &&  hour >= 1 && hour < 3){
+    if (hour =='1' && mins < '45'){
         status = 'closed';
     }else{
         status = 'online';
