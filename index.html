@@ -171,14 +171,14 @@ h2 {
 
 
 
-var d = new Date(new Date().toLocaleString("en-US", {timeZone: "America/New_York"}));
+var d = new Date(new Date().toLocaleString("en-US", {timeZone: "Pacific/Auckland"}));
 var dayOfWeek = d.getDay();
 var hour = d.getHours();
 var mins = d.getMinutes();
 var status = 'online';
 
-if (dayOfWeek !== 1 && dayOfWeek !== 3 && dayOfWeek !== 4 && dayOfWeek !== 5 && dayOfWeek !== 6 && dayOfWeek !== 0 &&  hour >= 2 && hour < 4){
-    if (hour =='2' && mins < '45'){
+if (dayOfWeek !== 1 && dayOfWeek !== 3 && dayOfWeek !== 4 && dayOfWeek !== 5 && dayOfWeek !== 6 && dayOfWeek !== 0 &&  hour >= 18 && hour < 20){
+    if (hour =='18' && mins < '45'){
         status = 'closed';
     }else{
         status = 'online';
