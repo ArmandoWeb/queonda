@@ -116,7 +116,7 @@ h2 {
 <div class="container">
   	<div class="row">
   		<div class="col-lg-12 text-center">
-  		<img class="img-fluid" src="QueOnda.png" alt="Que Onda radio en español" title="Que Onda">
+  		<img class="img-fluid" src="QueOndaLogoTransparente.png" alt="Que Onda radio en español" title="Que Onda">
   		</div>    
  
     <h2 class="example col-md-12 text-center">
@@ -169,7 +169,7 @@ createAudioPlayerWidget('accessmedia-livestream-widget',
 <!-- Copyright -->
 <div>
   <br>
-   <p class="text-secondary">© 2025 - Developed by<a href="http://armando.nz/" target="_blank"> Armando.NZ</a></p>
+   <p class="text-secondary">© 2026 - Developed by<a href="http://armando.nz/" target="_blank"> Armando.NZ</a></p>
 
 <!-- Copyright -->
 
@@ -178,31 +178,26 @@ createAudioPlayerWidget('accessmedia-livestream-widget',
 
 	
 <script>	
-
-
-
-var d = new Date(new Date().toLocaleString("en-US", {timeZone: "America/New_York"}));
+var d = new Date(new Date().toLocaleString("en-US", {timeZone: "Pacific/Auckland"}));
 var dayOfWeek = d.getDay();
 var hour = d.getHours();
 var mins = d.getMinutes();
 var status = 'online';
-
-if (dayOfWeek !== 1 && dayOfWeek !== 3 && dayOfWeek !== 4 && dayOfWeek !== 5 && dayOfWeek !== 6 && dayOfWeek !== 0 &&  hour >= 0 && hour < 2){
-    if (hour =='0' && mins < '45'){
-        status = 'closed';
-    }else{
-        status = 'online';
-    }
-}else{
+if (dayOfWeek === 2 && hour >= 18 && hour < 20){ 
+  if (hour === 18 && mins < 45){
     status = 'closed';
-}
-
-if (status=='online') {
-    $('.live').show();
-    $('.podcast').hide();
+  }else{
+    status = 'online';
+  }
 }else{
-    $('.live').hide();
-    $('.podcast').show();
+  status = 'closed';
+}
+if (status=='online') {
+  $('.live').show();
+  $('.podcast').hide();
+}else{
+  $('.live').hide();
+  $('.podcast').show();
 }
 </script>
 	
