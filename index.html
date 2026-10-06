@@ -183,8 +183,8 @@ var dayOfWeek = d.getDay();
 var hour = d.getHours();
 var mins = d.getMinutes();
 var status = 'online';
-if (dayOfWeek === 2 && hour >= 19 && hour < 21){ 
-  if (hour === 19 && mins < 45){
+if (dayOfWeek === 2 && hour >= 18 && hour < 20){ 
+  if (hour === 18 && mins < 45){
     status = 'closed';
   }else{
     status = 'online';
